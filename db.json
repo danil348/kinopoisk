@@ -1,0 +1,24 @@
+{
+	"users":[
+		{
+			"id": 1,
+			"name": "ivan",
+			"img": "http://localhost:3333/assets/images/test.jpg"
+		},
+		{
+			"id": 2,
+			"name": "qwe",
+			"img": "http://localhost:3333/assets/images/test.jpg"
+		},
+		{
+			"id": 3,
+			"name": "dan",
+			"img": "http://localhost:3333/assets/images/test.jpg"
+		},
+		{
+			"id": 4,
+			"name": "kuril",
+			"img": "http://localhost:3333/assets/images/test.jpg"
+		}
+	]
+}
