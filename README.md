@@ -15,3 +15,9 @@ npm run build
 # or
 npm run preview
 ```
+
+## Create with:
+
+```bash
+npm create vite@latest name --template react-ts
+```
