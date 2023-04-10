@@ -5,7 +5,6 @@ import styles from "./Home.module.scss";
 
 const Home = () => {
 	const { movies } = useMovies()
-	
   const userContext = useContext(AuthContext)
 
 	useEffect(() => {

@@ -20,12 +20,10 @@ const Register = () => {
 			const res = await createUserWithEmailAndPassword(auth, user?.email as string, user?.password as string)
 			await setDoc(doc(db, "users", res.user.uid), {...user});
 			userContext.setCurrentUser({...user})
-
-			navigate("/")
 		} catch (error) {
 			console.log("🚀 ~ file: LoginModal.tsx:16 ~ onSubmit ~ error:", error)
 		} finally{
-			console.log("created")
+			navigate("/")
 		}
 	}
 

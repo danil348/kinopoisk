@@ -17,21 +17,17 @@ const Login = () => {
 	const handleSend = async () => {
 		try {
 			const res = await signInWithEmailAndPassword(auth, user?.email as string, user?.password as string)
-			
-			const docRef = doc(db, "users", res.user.uid);
-			const docSnap = await getDoc(docRef);
+			const docSnap = await getDoc(doc(db, "users", res.user.uid));
 
 			userContext.setCurrentUser({
 				name: docSnap.data()?.name,
 				email: docSnap.data()?.email,
 				password: docSnap.data()?.password
 			})
-
-			navigate("/")
 		} catch (error) {
 			console.log("🚀 ~ file: LoginModal.tsx:16 ~ onSubmit ~ error:", error)
 		} finally{
-			console.log("created")
+			navigate("/")
 		}
 	}
 
