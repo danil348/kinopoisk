@@ -4,12 +4,15 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import { auth, db } from "../../../firebase";
+import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { userType } from "../../../types/user.interface";
+import CustomInput from "../../ui/CustomInput/CustomInput";
 
 const Register = () => {
   const userContext = useContext(AuthContext)
-	const [user, setUser] = useState<userType | null>()
+  const { setItem } = useLocalStorage();
 	const navigate = useNavigate();
+	const [user, setUser] = useState<userType | null>()
 	
 	const handleChange = (e: any) => {
 		setUser((prev: any) => ({...prev, [e.target.name]: e.target.value}))
@@ -20,6 +23,9 @@ const Register = () => {
 			const res = await createUserWithEmailAndPassword(auth, user?.email as string, user?.password as string)
 			await setDoc(doc(db, "users", res.user.uid), {...user});
 			userContext.setCurrentUser({...user})
+      setItem('password', user?.password as string)
+      setItem('name', user?.name as string)
+      setItem('email', user?.email as string)
 		} catch (error) {
 			console.log("🚀 ~ file: LoginModal.tsx:16 ~ onSubmit ~ error:", error)
 		} finally{
@@ -30,9 +36,9 @@ const Register = () => {
 	return (
 		<div>
 			<button onClick={handleSend}>click</button>
-			<input type="text" name="name" onChange={handleChange} placeholder="name" />
-			<input type="email" name="email" onChange={handleChange} placeholder="email" />
-			<input type="password" name="password" onChange={handleChange} placeholder="password" />
+			<CustomInput type="text" name="name" onChange={handleChange} placeholder="name" />
+			<CustomInput type="email" name="email" onChange={handleChange} placeholder="email" />
+			<CustomInput type="password" name="password" onChange={handleChange} placeholder="password" />
 		</div>
 	)
 }
