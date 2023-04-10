@@ -1,4 +1,4 @@
-export const userType = {
+export type userType = {
 	name: "",
 	email: "",
 	password: ""
