@@ -1,9 +1,18 @@
+import useUsers from "../../../hooks/useUsers";
 import styles from "./Home.module.scss";
 
 const Home = () => {
+	const { users } = useUsers()
+
+	console.log(users)
+
 	return (
 		<div className={styles.home}>
-			<img loading="lazy" src="http://localhost:3333/assets/images/test.jpg" alt=""/>
+			{users && users.map((user, index) => (
+				<div className="user" key={index}>
+					<div className={styles.userName}>{user.name}</div>
+				</div>
+			))}
 		</div>
 	)
 }
