@@ -1,26 +1,21 @@
-import { useContext } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import styles from "./Layout.module.scss";
+import CustomLink from "./ui/CustomLink/CustomLink";
 
 const Layout = () => {
-	const setActive = ({isActive} : any) => isActive ? styles.active : "";
   const userContext = useContext(AuthContext)
-	
+	const [path, setPath] = useState("")
+
+	useEffect(() => {
+		setPath(userContext.currentUser ? "profile" : "login")
+	},[userContext.currentUser])
+
 	return (
 		<>
 			<header>
-				{userContext.currentUser ? 
-					<>
-						<NavLink to="/" className={setActive}>home</NavLink>
-						<NavLink to="/profile" className={setActive}>profile</NavLink>
-					</>
-					:
-					<>
-						<NavLink to="/" className={setActive}>home</NavLink>
-						<NavLink to="/login" className={setActive}>login</NavLink>
-					</>
-				}
+				<CustomLink to="/">home</CustomLink>
+				<CustomLink to={"/" + path}>{path}</CustomLink>
 			</header>
 			<main>
 				<Outlet/>
