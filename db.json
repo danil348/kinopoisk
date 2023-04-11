@@ -17,6 +17,24 @@
         "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
         "mainImage": "sd"
       }
+    },
+    {
+      "id": 2,
+      "name": "поезд в пусанию",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/test.jpg",
+        "mainImage": "sd"
+      }
     }
   ]
 }
