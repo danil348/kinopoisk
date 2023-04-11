@@ -10,7 +10,7 @@ import CustomInput from "../../ui/CustomInput/CustomInput";
 
 const Register = () => {
   const userContext = useContext(AuthContext)
-  const { setItem } = useLocalStorage();
+  const { setObject } = useLocalStorage();
 	const navigate = useNavigate();
 	const [user, setUser] = useState<userType | null>()
 	
@@ -22,10 +22,10 @@ const Register = () => {
 		try {
 			const res = await createUserWithEmailAndPassword(auth, user?.email as string, user?.password as string)
 			await setDoc(doc(db, "users", res.user.uid), {...user});
+			
 			userContext.setCurrentUser({...user})
-      setItem('password', user?.password as string)
-      setItem('name', user?.name as string)
-      setItem('email', user?.email as string)
+			setObject('user', user)
+		
 		} catch (error) {
 			console.log("🚀 ~ file: LoginModal.tsx:16 ~ onSubmit ~ error:", error)
 		} finally{

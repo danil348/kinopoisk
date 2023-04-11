@@ -8,6 +8,14 @@ export const useLocalStorage = () => {
     setValue(value);
   };
 
+  const setObject = (key: string, value: any) => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  const getObject = (key: string) => {
+    const value = localStorage.getItem(key);
+    return value;
+  }
 
   const getItem = (key: string) => {
     const value = localStorage.getItem(key);
@@ -20,5 +28,5 @@ export const useLocalStorage = () => {
     setValue(null);
   };
 
-  return { value, setItem, getItem, removeItem };
+  return { value, setItem, getItem, removeItem, getObject, setObject};
 };

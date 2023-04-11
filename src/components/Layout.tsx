@@ -7,19 +7,12 @@ import CustomLink from "./ui/CustomLink/CustomLink";
 const Layout = () => {
   const userContext = useContext(AuthContext)
 	const [path, setPath] = useState("")
-  const { getItem } = useLocalStorage();
+  const { getObject } = useLocalStorage();
 
 	useEffect(() => {
-		const password = getItem("password")
-		const mail = getItem("email")
-		const name = getItem("name")
-
-		if(name && mail && password){
-			userContext.setCurrentUser({
-				name: name,
-				email: mail,
-				password: password
-			})
+		const user = getObject('user')
+		if(user){
+			userContext.setCurrentUser(JSON.parse(user))
 		}
 	},[])
 

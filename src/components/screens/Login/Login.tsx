@@ -13,7 +13,7 @@ const Login = () => {
   const userContext = useContext(AuthContext)
 	const [user, setUser] = useState({email: "", password: ""})
 	const navigate = useNavigate();
-  const { setItem } = useLocalStorage();
+  const { setObject } = useLocalStorage();
 	
 	const handleChange = (e: any) => {
 		setUser((prev: any) => ({...prev, [e.target.name]: e.target.value}))
@@ -23,6 +23,7 @@ const Login = () => {
 		try {
 			const res = await signInWithEmailAndPassword(auth, user?.email as string, user?.password as string)
 			const docSnap = await getDoc(doc(db, "users", res.user.uid));
+			
 			const userInfo = {
 				name: docSnap.data()?.name,
 				email: docSnap.data()?.email,
@@ -30,9 +31,8 @@ const Login = () => {
 			}
 
 			userContext.setCurrentUser(userInfo)
-      setItem('password', user?.password as string)
-      setItem('name', docSnap.data()?.name as string)
-      setItem('email', user?.email as string)
+			setObject('user', userInfo)
+		
 		} catch (error) {
 			console.log("🚀 ~ file: LoginModal.tsx:16 ~ onSubmit ~ error:", error)
 		} finally{

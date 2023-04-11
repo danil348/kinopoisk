@@ -10,7 +10,7 @@ const Home = () => {
 
 	useEffect(() => {
 		console.log(userContext.currentUser)
-	},[])
+	},[userContext.currentUser])
 
 	return (
 		<div className={styles.home}>
