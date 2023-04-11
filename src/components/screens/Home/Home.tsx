@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import useMovies from "../../../hooks/useMovies";
 import styles from "./Home.module.scss";
@@ -7,21 +7,22 @@ import styles from "./Home.module.scss";
 const Home = () => {
 	const { movies } = useMovies()
   const userContext = useContext(AuthContext)
+	const navigate = useNavigate()
+
+	const goToMovie = (path: string) => navigate(path)
 
 	useEffect(() => {
 		console.log(userContext.currentUser)
 	},[userContext.currentUser])
 
 	return (
-		<div className={styles.home}>
+		<section className={styles.home}>
 			{movies && movies.map((movie, index) => (
-				<Link key={index} to={`/movie/${movie.types.join("_")}/${movie.id}`}>
-					<div className="" key={index}>
-						<img loading="lazy" src={movie.assets.previewImage} alt=""/>
-					</div>
-				</Link>
+				<div className="" key={index} onClick={() => goToMovie(`/movie/${movie.types.join("_")}/${movie.id}`)}>
+					<img loading="lazy" src={movie.assets.previewImage} alt=""/>
+				</div>
 			))}
-		</div>
+		</section>
 	)
 }
 

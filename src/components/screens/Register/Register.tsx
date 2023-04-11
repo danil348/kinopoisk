@@ -14,9 +14,7 @@ const Register = () => {
 	const navigate = useNavigate();
 	const [user, setUser] = useState<userType | null>()
 	
-	const handleChange = (e: any) => {
-		setUser((prev: any) => ({...prev, [e.target.name]: e.target.value}))
-	}
+	const handleChange = (e: any) => setUser((prev: any) => ({...prev, [e.target.name]: e.target.value}))
 
 	const handleSend = async () => {
 		try {

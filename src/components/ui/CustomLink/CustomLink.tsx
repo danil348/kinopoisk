@@ -5,15 +5,21 @@ import styles from "./CustomLink.module.scss";
 interface CustomLinkProps {
 	children: any,
 	to: string,
+	customClass?: string
 }
 
-const CustomLink: React.FC<CustomLinkProps> = ({children, to}) => {
+const CustomLink: React.FC<CustomLinkProps> = ({children, to, customClass}) => {
 	const match = useMatch(to)
+
+	const getClass = () => {
+		let newClass = match ? styles.active : ""
+		return customClass ? customClass + " " + newClass : newClass
+	}
 
 	return (
 		<NavLink 
 			to={to}
-			className={() => match ? styles.active : ""}
+			className={getClass}
 		>
 			{children}
 		</NavLink>

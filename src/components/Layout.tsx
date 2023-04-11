@@ -23,7 +23,7 @@ const Layout = () => {
 	return (
 		<>
 			<header>
-				<CustomLink to="/">home</CustomLink>
+				<CustomLink to="/" customClass="qwe" >home</CustomLink>
 				<CustomLink to={"/" + path}>{path}</CustomLink>
 			</header>
 			<main>
