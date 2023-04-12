@@ -11,9 +11,7 @@ const Layout = () => {
 
 	useEffect(() => {
 		const user = getObject('user')
-		if(user){
-			userContext.setCurrentUser(user)
-		}
+		user && userContext.setCurrentUser(user)
 	},[])
 
 	useEffect(() => {

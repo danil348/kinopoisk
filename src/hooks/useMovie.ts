@@ -16,19 +16,20 @@ export const useMovie = () => {
 		return movie
 	}
 
-	const getMovieByType = async (type: string) => {
-		let movie = {}
-		await axios.get(`http://localhost:3333/movies?type=${type}`)
+	const getMovieByType = async (type: string, page: number) => {
+		let movies = {}
+		await axios.get(`http://localhost:3333/movies?types_like=${type}&_limit=10&_page=${page}`)
 			.then((res) => {
-				movie = res.data
+				movies = res.data
 			}).catch((error) => {
 				if(axios.isCancel(error)){
 					console.log("request cancelled")
 				}else{
-					return null
+
 				}
 			})
-		return movie
+		
+			return movies
 	}
 
   return { getMovieById, getMovieByType };

@@ -8,9 +8,7 @@ const MoviePage = () => {
 	const { getMovieById } = useMovie()
 
 	useEffect(() => {
-		if(id){
-			getMovieById(id).then((movie) => setMovie(movie))
-		}
+		id && getMovieById(id).then((movie) => setMovie(movie))
 	},[id])
 
 	return (

@@ -10,6 +10,7 @@ const Home = () => {
 	const navigate = useNavigate()
 
 	const goToMovie = (path: string) => navigate(path)
+	const goToMovies  = (path: string) => navigate(path)
 
 	useEffect(() => {
 		console.log(userContext.currentUser)
@@ -17,6 +18,7 @@ const Home = () => {
 
 	return (
 		<section className={styles.home}>
+			<button onClick={() => goToMovies(`/movie/ужасы`)}>ужасы</button>
 			{movies && movies.map((movie, index) => (
 				<div className="" key={index} onClick={() => goToMovie(`/movie/${movie.types.join("_")}/${movie.id}`)}>
 					<img loading="lazy" src={movie.assets.previewImage} alt=""/>
