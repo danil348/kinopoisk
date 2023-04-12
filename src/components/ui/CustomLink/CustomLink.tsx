@@ -1,6 +1,5 @@
 import React from "react";
-import { NavLink, useMatch } from "react-router-dom";
-import styles from "./CustomLink.module.scss";
+import { NavLink } from "react-router-dom";
 
 interface CustomLinkProps {
 	children: any,
@@ -9,17 +8,11 @@ interface CustomLinkProps {
 }
 
 const CustomLink: React.FC<CustomLinkProps> = ({children, to, customClass}) => {
-	const match = useMatch(to)
-
-	const getClass = () => {
-		let newClass = match ? styles.active : ""
-		return customClass ? customClass + " " + newClass : newClass
-	}
 
 	return (
 		<NavLink 
 			to={to}
-			className={getClass}
+			className={customClass}
 		>
 			{children}
 		</NavLink>

@@ -1,0 +1,35 @@
+@import './ProfileLink/ProfileLink.module.scss';
+
+.header {
+	&.scroll {
+		transform: translate(0, -100%);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 150%;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.595) 6.67%, rgba(0, 0, 0, 0.579) 13.33%, rgba(0, 0, 0, 0.551) 20%, rgba(0, 0, 0, 0.512) 26.67%, rgba(0, 0, 0, 0.461) 33.33%, rgba(0, 0, 0, 0.401) 40%, rgba(0, 0, 0, 0.334) 46.67%, rgba(0, 0, 0, 0.266) 53.33%, rgba(0, 0, 0, 0.199) 60%, rgba(0, 0, 0, 0.139) 66.67%, rgba(0, 0, 0, 0.088) 73.33%, rgba(0, 0, 0, 0.049) 80%, rgba(0, 0, 0, 0.021) 86.67%, rgba(0, 0, 0, 0.005) 93.33%, transparent);
+	}
+	width: 100%;
+	transition: all 0.3s ease 0.2s;
+	min-height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	z-index: 500;
+	.header__content {
+		display: flex;
+		width: 90%;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.header__nav {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}

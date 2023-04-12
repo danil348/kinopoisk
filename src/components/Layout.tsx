@@ -1,12 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import CustomLink from "./ui/CustomLink/CustomLink";
+import Header from "./Header/Header";
 
 const Layout = () => {
   const userContext = useContext(AuthContext)
-	const [path, setPath] = useState("")
   const { getObject } = useLocalStorage();
 
 	useEffect(() => {
@@ -14,16 +13,9 @@ const Layout = () => {
 		user && userContext.setCurrentUser(user)
 	},[])
 
-	useEffect(() => {
-		setPath(userContext.currentUser ? "profile" : "login")
-	},[userContext.currentUser])
-
 	return (
 		<>
-			<header>
-				<CustomLink to="/" customClass="qwe" >home</CustomLink>
-				<CustomLink to={"/" + path}>{path}</CustomLink>
-			</header>
+			<Header/>
 			<main>
 				<Outlet/>
 			</main>

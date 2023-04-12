@@ -12,19 +12,19 @@ const pageConfig = {
 const MoviesPage = () => {
 	const {category} = useParams()
 	const [movies, setMovies] = useState([])
-	const [pages, setPages] = useState(pageConfig)
+	const [page, setPage] = useState(pageConfig)
 	const { getMovieByType } = useMovie()
 
 	useEffect(() => {
-		if(category && pages.fetch){
-			getMovieByType(category, pages.page).then((res) => {
+		if(category && page.fetch){
+			getMovieByType(category, page.page).then((res) => {
 				setMovies([...movies, ...(res as [])])
-				setPages((prev) => ({...prev, page: prev.page + 1}))
+				setPage((prev) => ({...prev, page: prev.page + 1}))
 			}).finally(() => {
-				setPages((prev) => ({...prev, fetch: false}))
+				setPage((prev) => ({...prev, fetch: false}))
 			})
 		}
-	}, [pages.fetch])
+	}, [page.fetch])
 
 	useEffect(() => {
 		document.addEventListener("scroll", handleScroll)
@@ -36,7 +36,7 @@ const MoviesPage = () => {
 
 	const handleScroll = (e: any) => {
 		if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100){
-			setPages((prev) => ({...prev, fetch: true}))
+			setPage((prev) => ({...prev, fetch: true}))
 		}
 	}
 
