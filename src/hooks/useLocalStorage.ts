@@ -14,7 +14,7 @@ export const useLocalStorage = () => {
 
   const getObject = (key: string) => {
     const value = localStorage.getItem(key);
-    return value;
+    return JSON.parse(value as string);
   }
 
   const getItem = (key: string) => {

@@ -12,7 +12,7 @@ const Layout = () => {
 	useEffect(() => {
 		const user = getObject('user')
 		if(user){
-			userContext.setCurrentUser(JSON.parse(user))
+			userContext.setCurrentUser(user)
 		}
 	},[])
 
