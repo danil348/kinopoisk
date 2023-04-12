@@ -3,6 +3,10 @@
 .header {
 	&.scroll {
 		transform: translate(0, -100%);
+		.profile-modal {
+			opacity: 0;
+			visibility: hidden;
+		}
 	}
 
 	&::before {

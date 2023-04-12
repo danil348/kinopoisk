@@ -1,13 +1,32 @@
 @import '../../../variables.scss';
 
 .header-profile {
-	cursor: pointer;
 	position: relative;
+	color: $white_1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	.profile-modal__userInfo {
+		position: absolute;
+		width: 80%;
+		top: 10px;
+		padding: 0px 20px;
+		.profile-modal__name {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			font-size: 24px;
+		}
+		.profile-modal__email {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			opacity: 0.6;
+		}
+	}
 	.header-profile__content {
 		display: flex;
+		cursor: pointer;
 		width: 50px;
 		background-color: rgb(10, 25, 190);
 		border-radius: 100%;
@@ -15,10 +34,15 @@
 		position: relative;
 		height: 50px;
 		z-index: 10;
+		transition: all 0.3s ease 0s;
 		justify-content: center;
 		padding-bottom: 3px;
-		color: $white_1;
 		align-items: center;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgb(10, 23, 169);
+			}
+		}
 	}
 	.header-profile__modal {
 		z-index: 1;
