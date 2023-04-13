@@ -9,7 +9,7 @@ interface CustomInputProps {
 
 const CustomInput: React.FC<CustomInputProps> = ({type, name, onChange, placeholder}) => {
 	return (
-		<input type={type} name={name} onChange={(e) => onChange(e)} placeholder={placeholder} />
+		<input className="customInput" type={type} name={name} onChange={(e) => onChange(e)} placeholder={placeholder} />
 	)
 }
 

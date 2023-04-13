@@ -116,7 +116,17 @@ body {
 }
 
 main {
-	padding-top: 130px;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 100%;
 }
 
-@import './components/Header/Header.module.scss';
+#root {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@import './components/Header/Header.module';
+@import './components/Layout.module';

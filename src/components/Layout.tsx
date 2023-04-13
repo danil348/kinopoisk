@@ -19,9 +19,9 @@ const Layout = () => {
 			<main>
 				<Outlet/>
 			</main>
-			<footer>
+			{/*<footer>
 				footer content
-			</footer>
+			</footer>*/}
 		</>
 	)
 }

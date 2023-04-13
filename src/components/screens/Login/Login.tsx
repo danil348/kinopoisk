@@ -2,6 +2,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { doc, getDoc } from "firebase/firestore"
 import { useContext, useState } from "react"
+import { BiLogInCircle } from "react-icons/bi"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../context/AuthContext"
 import { auth, db } from "../../../firebase"
@@ -41,11 +42,19 @@ const Login = () => {
 	}
 
 	return (
-		<div>
-			<button onClick={handleSend}>click</button>
-			<CustomInput type="email" name="email" onChange={handleChange} placeholder="email" />
-			<CustomInput type="password" name="password" onChange={handleChange} placeholder="password" />
-			<CustomLink to="/register">register</CustomLink>
+		<div className="login-page">
+			<div className="login-page__modal">
+				<div className="login-page__icon">
+					<BiLogInCircle size={45} color="white"/>
+				</div>
+				<h1 className="login-page__title" >Войдите или зарегистрируйтесь</h1>
+				<CustomInput type="email" name="email" onChange={handleChange} placeholder="email" />
+				<CustomInput type="password" name="password" onChange={handleChange} placeholder="password" />
+				<button onClick={handleSend} className="login-page__button">Войти</button>
+				
+				<h2 className="login-page__text" >Нет аккаунта?</h2>
+				<CustomLink customClass="login-page__registerButton" to="/register">Регистрация</CustomLink>
+			</div>
 		</div>
 	)
 }
