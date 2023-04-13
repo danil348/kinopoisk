@@ -7,7 +7,7 @@
 	position: relative;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 	&__bgImage {
 		position: absolute;
 		z-index: 1;
@@ -17,16 +17,81 @@
 		left: 0;
 		object-fit: cover;
 	}
+	&__titleImage {
+		will-change: transform;
+	}
 	&__content {
+		will-change: opacity;
 		display: flex;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		flex-direction: column;
 		gap: 10px;
 		max-width: 636px;
-		position: relative;
 		z-index: 2;
 	}
 	&__title {
+		will-change: transform;
 		font-size: 27px;
 		text-align: center;
+	}
+}
+.promoContent-actions {
+	&__left {
+		display: flex;
+		gap: 15px;
+	}
+	&__right{
+		display: flex;
+		gap: 15px;
+	}
+}
+.promoContent-bottom {
+	margin-bottom: 4rem;
+	margin-left: 6rem;
+	margin-right: 6rem;
+	width: 100%;
+	&__image {
+		img {
+			max-height: 98px;
+		}
+	}
+	&__actions {
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__button {
+		will-change: transform;
+		height: 60px;
+		padding: 0 28px;
+		cursor: pointer;
+		font-size: 18px;
+		border-radius: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 800;
+		gap: 8px;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+	&__buttonOrange {
+		background: linear-gradient(135deg, #f50 69.91%, #d6bb00);
+	}
+	&__buttonDark {
+		background-color: $dark_1;
+		opacity: 0.95;
+	}
+	&__buttonCircle {
+		padding: 0 18px;
+		border-radius: 100%;
 	}
 }
