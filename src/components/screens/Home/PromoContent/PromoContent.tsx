@@ -31,7 +31,7 @@ const PromoContent: React.FC<PromoContentProps> = ({id}) => {
 					<motion.div className="promoContent__content"
 						initial={{  opacity: 1 }}
 						animate={{  opacity: 0 }}
-						transition={{delay: 3.5, duration: 0.15}}
+						transition={{delay: 3.5, duration: 0.20}}
 					>
 						<motion.img loading="lazy" src={movie?.assets.titleImage} alt="" className="promoContent__titleImage"
 							initial={{  y: -40, scale: 1.2 }}
