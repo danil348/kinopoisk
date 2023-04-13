@@ -34,18 +34,17 @@
 	justify-content: center;
 	position: fixed;
 	z-index: 500;
-	.header__content {
+	&__content {
 		display: flex;
 		z-index: 1;
 		width: 90%;
 		align-items: center;
 		justify-content: space-between;
 	}
-}
-
-.header__nav {
-	display: flex;
-	gap: 20px;
-	position: relative;
-	align-items: center;
+	&__nav {
+		display: flex;
+		gap: 20px;
+		position: relative;
+		align-items: center;
+	}
 }

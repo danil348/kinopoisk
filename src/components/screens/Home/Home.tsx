@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import useMovies from "../../../hooks/useMovies";
 import styles from "./Home.module.scss";
 import HomeSlider from "./HomeSlider/HomeSlider";
+import PromoContent from "./PromoContent/PromoContent";
 
 const Home = () => {
 	const { movies } = useMovies()
@@ -12,17 +13,20 @@ const Home = () => {
 	const goToMovies  = (path: string) => navigate(path)
 
 	return (
-		<section className={styles.home}>
-			<button onClick={() => goToMovies(`/movie/ужасы`)}>ужасы</button>
-			{categories.map((category, index) => (
-				<HomeSlider category={category} key={index}/>
-			))}
-			{movies && movies.map((movie, index) => (
-				<div className="" key={index} onClick={() => goToMovie(`/movie/${movie.types.join("_")}/${movie.id}`)}>
-					<img loading="lazy" src={movie.assets.previewImage} alt=""/>
-				</div>
-			))}
-		</section>
+		<>
+			<PromoContent id="2"/>
+			<section className={styles.home}>
+				<button onClick={() => goToMovies(`/movie/ужасы`)}>ужасы</button>
+				{categories.map((category, index) => (
+					<HomeSlider category={category} key={index}/>
+				))}
+				{movies && movies.map((movie, index) => (
+					<div className="" key={index} onClick={() => goToMovie(`/movie/${movie.types.join("_")}/${movie.id}`)}>
+						<img loading="lazy" src={movie.assets.previewImage} alt=""/>
+					</div>
+				))}
+			</section>
+		</>
 	)
 }
 

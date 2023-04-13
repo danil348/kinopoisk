@@ -111,10 +111,13 @@
 		justify-content: center;
 		background-color: $dark_4;
 		cursor: pointer;
-		opacity: 0.8;
 		transition: all 0.3s ease 0s;
 		overflow: hidden;
 		align-items: center;
+		svg {
+			transition: all 0.3s ease 0s;
+			opacity: 0.8;
+		}
 		&Disable {
 			position: absolute;
 			width: 50%;
@@ -127,7 +130,9 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				opacity: 1;
+				svg {
+					opacity: 1;
+				}
 			}
 		}
 		@media (max-width: 450px) {

@@ -1,7 +1,7 @@
 @import '../../../variables.scss';
 
 .header-profile {
-	.header-profile__logIn {
+	&__logIn {
 		cursor: pointer;
 		opacity: 0.6;
 		font-size: 23px;
@@ -45,7 +45,7 @@
 			opacity: 0.6;
 		}
 	}
-	.header-profile__content {
+	&__content {
 		display: flex;
 		cursor: pointer;
 		width: 50px;
@@ -65,7 +65,7 @@
 			}
 		}
 	}
-	.header-profile__modal {
+	&__modal {
 		z-index: 1;
 		position: absolute;
 		width: 300px;
