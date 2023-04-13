@@ -6,7 +6,8 @@ import styles from "./MoviesPage.module.scss";
 const pageConfig = {
 	fetch: true,
 	page: 0,
-	pageCount: 0
+	pageCount: 0,
+	limit: 10
 }
 
 const MoviesPage = () => {
@@ -17,7 +18,7 @@ const MoviesPage = () => {
 
 	useEffect(() => {
 		if(category && page.fetch){
-			getMovieByType(category, page.page).then((res) => {
+			getMovieByType(category, page.page, page.limit).then((res) => {
 				setMovies([...movies, ...(res as [])])
 				setPage((prev) => ({...prev, page: prev.page + 1}))
 			}).finally(() => {

@@ -16,9 +16,9 @@ export const useMovie = () => {
 		return movie
 	}
 
-	const getMovieByType = async (type: string, page: number) => {
+	const getMovieByType = async (type: string, page: number, limit: number) => {
 		let movies = {}
-		await axios.get(`http://localhost:3333/movies?types_like=${type}&_limit=10&_page=${page}`)
+		await axios.get(`http://localhost:3333/movies?types_like=${type}&_limit=${limit}&_page=${page}`)
 			.then((res) => {
 				movies = res.data
 			}).catch((error) => {

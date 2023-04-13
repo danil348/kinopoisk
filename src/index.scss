@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import './variables.scss';
+
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
 	all: unset;
 	display: revert;
@@ -99,8 +101,11 @@ html {
 	height: 100%;
 }
 body {
+	color: $white_1;
+	background-color: $dark_3;
 	font-family: 'Roboto';
 	* {
+		color: $white_1;
 		font-family: 'Roboto';
 	}
 	height: 100%;
@@ -110,8 +115,8 @@ body {
 	height: 100%;
 }
 
-main{
+main {
 	padding-top: 130px;
 }
 
-@import './components/Header/Header.module.scss'
+@import './components/Header/Header.module.scss';

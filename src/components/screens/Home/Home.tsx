@@ -1,24 +1,22 @@
-import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../context/AuthContext";
 import useMovies from "../../../hooks/useMovies";
 import styles from "./Home.module.scss";
+import HomeSlider from "./HomeSlider/HomeSlider";
 
 const Home = () => {
 	const { movies } = useMovies()
-  const userContext = useContext(AuthContext)
 	const navigate = useNavigate()
+	const categories = ["ужасы"]
 
 	const goToMovie = (path: string) => navigate(path)
 	const goToMovies  = (path: string) => navigate(path)
 
-	useEffect(() => {
-		console.log(userContext.currentUser)
-	},[userContext.currentUser])
-
 	return (
 		<section className={styles.home}>
 			<button onClick={() => goToMovies(`/movie/ужасы`)}>ужасы</button>
+			{categories.map((category, index) => (
+				<HomeSlider category={category} key={index}/>
+			))}
 			{movies && movies.map((movie, index) => (
 				<div className="" key={index} onClick={() => goToMovie(`/movie/${movie.types.join("_")}/${movie.id}`)}>
 					<img loading="lazy" src={movie.assets.previewImage} alt=""/>

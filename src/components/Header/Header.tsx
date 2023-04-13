@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CustomLink from "../ui/CustomLink/CustomLink";
+import HeaderSearch from "./HeaderSearch/HeaderSearch";
 import ProfileLink from "./ProfileLink/ProfileLink";
 
 const scrollConfig = {
@@ -31,6 +32,7 @@ const Header = () => {
 					<CustomLink to="/12" customClass="header__link">Моё</CustomLink>
 					<CustomLink to="/112" customClass="header__link">Каналы</CustomLink>
 					<CustomLink to="/132" customClass="header__link">Спорт</CustomLink>
+					<HeaderSearch/>
 				</nav>
 				<ProfileLink/>
 			</div>
