@@ -34,7 +34,8 @@
       "assets": {
         "previewImage": "http://localhost:3333/assets/images/movies/2/preview.webp",
         "mainImage": "http://localhost:3333/assets/images/movies/2/main.webp",
-        "titleImage" : "http://localhost:3333/assets/images/movies/2/title.webp"
+        "titleImage" : "http://localhost:3333/assets/images/movies/2/title.webp",
+        "trailer": "http://localhost:3333/assets/images/movies/2/trailer.mp4"
       },
       "annotations": "Одинокая Зои сопровождает друга детства на свадьбу в Пакистан. Теплый ромком с Лили Джеймс и Шазадом Латифом"
     }
