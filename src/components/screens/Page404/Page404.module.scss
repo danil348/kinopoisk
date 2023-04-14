@@ -1,3 +1,44 @@
-.Page404{
-	color: green;
+.notFound-page {
+	min-width: 1300px;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	&__content {
+		width: 90%;
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
+	&__text {
+		flex: 0 1 100%;
+	}
+	&__gif {
+		flex: 0 0 830px;
+		user-select: none;
+	}
+	&__title {
+		font-size: 60px;
+		font-weight: 800;
+		margin-bottom: 20px;
+	}
+	&__info {
+		opacity: 0.8;
+		font-size: 18px;
+		max-width: 55%;
+	}
+	&__actions{
+		margin-top: 50px;
+	}
+	&__homeButton {
+		opacity: 0.8;
+		cursor: pointer;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
 }
