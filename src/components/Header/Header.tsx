@@ -28,10 +28,10 @@ const Header = () => {
 				</div>
 				<nav className="header__nav">
 					<CustomLink to="/" customClass="header__link">Главная</CustomLink>
-					<CustomLink to="/1" customClass="header__link">Магазин</CustomLink>
-					<CustomLink to="/12" customClass="header__link">Моё</CustomLink>
-					<CustomLink to="/112" customClass="header__link">Каналы</CustomLink>
-					<CustomLink to="/132" customClass="header__link">Спорт</CustomLink>
+					<CustomLink to="/404/1" customClass="header__link">Магазин</CustomLink>
+					<CustomLink to="/404/2" customClass="header__link">Моё</CustomLink>
+					<CustomLink to="/404/3" customClass="header__link">Каналы</CustomLink>
+					<CustomLink to="/404/4" customClass="header__link">Спорт</CustomLink>
 					<HeaderSearch/>
 				</nav>
 				<ProfileLink/>

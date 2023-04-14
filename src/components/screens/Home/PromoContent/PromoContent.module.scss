@@ -2,15 +2,61 @@
 
 .promoContent {
 	min-width: 1040px;
-	height: 816px;
+	height: 90vh;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+	&__trailer {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		div {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 140% !important;
+			height: 140% !important;
+
+			@media (max-width: 1475px) {
+				width: 150% !important;
+				height: 150% !important;
+			}
+			@media (max-width: 1380px){
+				  
+				width: 170% !important;
+				height: 170% !important;
+			}
+			@media (max-width: 1228px){
+				  
+				width: 180% !important;
+				height: 180% !important;
+			}
+			@media (max-width: 1170px){
+				  
+				width: 190% !important;
+				height: 190% !important;
+			}
+			@media (max-width: 1100px){
+				  
+				width: 195% !important;
+				height: 195% !important;
+			}
+		}
+	}
+	&__video {
+		width: 100% !important;
+		height: auto !important;
+	}
 	&__titleImage {
 		will-change: transform;
 	}
@@ -37,7 +83,7 @@
 		display: flex;
 		gap: 15px;
 	}
-	&__right{
+	&__right {
 		display: flex;
 		gap: 15px;
 	}
@@ -48,6 +94,8 @@
 	margin-right: 6rem;
 	width: 100%;
 	&__image {
+		position: relative;
+		z-index: 1;
 		img {
 			max-height: 98px;
 		}
