@@ -1,23 +1,69 @@
+@import '../../../../variables';
+
 .home-slider {
 	height: auto;
 	overflow-x: hidden;
 	padding: 20px 0px;
 	width: auto;
+	position: relative;
+
 	&__slide {
+		cursor: pointer;
+		position: relative;
+		padding-bottom: 56%;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
 	}
+
 	&__wrapper {
+		width: fit-content;
 		overflow-x: visible;
 		padding-left: 100px;
 	}
-	.slick-list {
-		overflow: visible;
-	}
-	.slick-arrow {
+
+	&__buttons {
+		position: absolute;
+		height: calc(100% - 40px);
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 10;
+		background-color: $dark_3;
 		opacity: 0;
-		visibility: hidden;
+		transition: all 0.3s ease 0s;
+		display: flex;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.6;
+			}
+		}
 	}
-	.slick-slide {
-		width: 340px;
-		margin: 0px 5px;
+
+	&__button {
+		flex: 0 1 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.slick {
+		&-list {
+			overflow: visible;
+		}
+		&-arrow {
+			opacity: 0;
+			visibility: hidden;
+		}
+		&-slide {
+			margin: 0px 5px;
+		}
 	}
 }
