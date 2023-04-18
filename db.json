@@ -38,6 +38,158 @@
         "trailer": "http://localhost:3333/assets/images/movies/2/trailer.mp4"
       },
       "annotations": "Одинокая Зои сопровождает друга детства на свадьбу в Пакистан. Теплый ромком с Лили Джеймс и Шазадом Латифом"
+    },
+    {
+      "id": 3,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
+    },
+    {
+      "id": 4,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
+    },
+    {
+      "id": 5,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
+    },
+    {
+      "id": 6,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
+    },
+    {
+      "id": 7,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
+    },
+    {
+      "id": 8,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
+    },
+    {
+      "id": 9,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
+    },
+    {
+      "id": 10,
+      "name": "поезд в пусан",
+      "types": [
+        "ужасы",
+        "боевик"
+      ],
+      "country": "Корея Южная",
+      "year": "2016",
+      "rating": "7.2",
+      "viewsNumber": "402K",
+      "duration": "1 ч 58 мин",
+      "limitation": "18",
+      "assets": {
+        "previewImage": "http://localhost:3333/assets/images/movies/1/preview.webp",
+        "mainImage": "http://localhost:3333/assets/images/movies/1/main.webp"
+      },
+      "annotations": ""
     }
   ]
 }
