@@ -39,7 +39,7 @@ const PromoContent: React.FC<PromoContentProps> = ({id}) => {
 						animate={{  opacity: 1 }}
 						transition={{delay: 3.1	, duration: 0.75}}
 					>
-						<ReactPlayer url={movie.assets.trailer} className="promoContent__video" playing={play} muted={muted} />
+						<ReactPlayer url={movie.assets.trailer} className="promoContent__video" playing={play} muted={muted} loop />
 					</motion.div>
 
 					<motion.div className="promoContent__content"

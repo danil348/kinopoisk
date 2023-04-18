@@ -10,13 +10,11 @@ const Home = () => {
 	const categories = ["ужасы"]
 
 	const goToMovie = (path: string) => navigate(path)
-	const goToMovies  = (path: string) => navigate(path)
 
 	return (
 		<>
 			<PromoContent id="2"/>
 			<section className={styles.home}>
-				<button onClick={() => goToMovies(`/movie/ужасы`)}>ужасы</button>
 				{categories.map((category, index) => (
 					<HomeSlider category={category} key={index}/>
 				))}

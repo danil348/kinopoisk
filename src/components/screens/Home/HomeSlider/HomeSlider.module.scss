@@ -1,0 +1,23 @@
+.home-slider {
+	height: auto;
+	overflow-x: hidden;
+	padding: 20px 0px;
+	width: auto;
+	&__slide {
+	}
+	&__wrapper {
+		overflow-x: visible;
+		padding-left: 100px;
+	}
+	.slick-list {
+		overflow: visible;
+	}
+	.slick-arrow {
+		opacity: 0;
+		visibility: hidden;
+	}
+	.slick-slide {
+		width: 340px;
+		margin: 0px 5px;
+	}
+}
