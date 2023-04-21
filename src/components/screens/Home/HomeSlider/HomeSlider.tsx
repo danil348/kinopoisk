@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -79,8 +80,17 @@ const HomeSlider: React.FC<HomeSliderProps> = ({category}) => {
               </div>
             )
           })}
-          <div className="">
-			      {<button onClick={() => navigate(`/movie/${category}`)}>ужасы</button>}
+          <div 
+            onClick={() => navigate(`/movie/${category}`)}
+            className="home-slider__slide home-slider__allMovieSlide slider-allMovieSlide" 
+            style={{width: slider.sliderWidth}} 
+          >
+            <div className="slider-allMovieSlide__content">
+              <div className="slider-allMovieSlide__icon">
+              <FaArrowRight/>
+              </div>
+              <div className="slider-allMovieSlide__text">показать все</div>
+            </div>
           </div>
         </Slider>
       </div>

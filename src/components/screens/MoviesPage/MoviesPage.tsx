@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useMovie } from "../../../hooks/useMovie";
-import styles from "./MoviesPage.module.scss";
 
 const pageConfig = {
 	fetch: true,
 	page: 0,
 	pageCount: 0,
-	limit: 10
+	limit: 20
 }
 
 const MoviesPage = () => {
@@ -15,6 +14,7 @@ const MoviesPage = () => {
 	const [movies, setMovies] = useState([])
 	const [page, setPage] = useState(pageConfig)
 	const { getMovieByType } = useMovie()
+	const ref = useRef<HTMLImageElement | null>(null)
 
 	useEffect(() => {
 		if(category && page.fetch){
@@ -41,16 +41,25 @@ const MoviesPage = () => {
 		}
 	}
 
-	return (
-		<div>
-			{movies && Object.entries(movies).map((movie: any, index) => {
-				return (
+	const handleSelectMovie = (e: any) => {
+		ref.current?.classList.remove("_selected")
+		ref.current = e.nativeEvent.target
+		ref.current?.classList.add("_selected")
+	}
 
-					<div className={styles.item} key={index}>ad
-					{movie[1].id}
-					</div>
-				)
-			})}
+	return (
+		<div className="movies-page">
+			<h1 className="movies-page__title">{category}</h1>
+			<div className="movies-page__items">
+				{movies && Object.entries(movies).map((movie: any, index) => {
+					return (
+						<div className="movies-page__item moviesPage-item" key={index} onClick={(e) => handleSelectMovie(e)}>
+							<div className="moviesPage-item__border"></div>
+							<img loading="lazy" src={movie[1].assets?.previewImage} alt="" />
+						</div>
+					)
+				})}
+			</div>
 		</div>
 	)
 }
