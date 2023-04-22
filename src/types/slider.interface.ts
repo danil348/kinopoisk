@@ -3,7 +3,7 @@ export const sliderSettings = {
   infinite: false,
   speed: 500,
   slidesToShow: 4,
-  slidesToScroll: 6,
+  slidesToScroll: 4,
   draggable: false,
   variableWidth: true,
   rows: 1

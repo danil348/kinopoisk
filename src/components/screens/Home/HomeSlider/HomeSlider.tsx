@@ -33,7 +33,7 @@ const HomeSlider: React.FC<HomeSliderProps> = ({category}) => {
 	}, [])
 
   useEffect(() => {
-    setSlider((prev) => ({...prev, sliderOffsetLeft: prev.sliderWidth / 3 - prev.sliderMargin * prev.slidesOnScreen}))
+    setSlider((prev) => ({...prev, sliderOffsetLeft:prev.sliderWidth / 3 - prev.sliderMargin * prev.slidesOnScreen}))
   }, [slider.sliderWidth])
 
   const changeSliderSize = () => {
@@ -53,20 +53,27 @@ const HomeSlider: React.FC<HomeSliderProps> = ({category}) => {
         <AiOutlineRight size={20} className="title-wrapper__icon"/>
       </div>
       <div className="home-slider__wrapper" style={{paddingLeft: slider.sliderOffsetLeft}}>
+        <div className="home-slider__buttons" >
+          <div 
+            className="home-slider__button" 
+            onClick={gotoPrev}
+            style={{width: slider.sliderOffsetLeft}}
+          >
+            <BsChevronCompactLeft size={60}/>
+          </div>
+          <div 
+            className="home-slider__button" 
+            onClick={gotoNext}
+            style={{width: slider.sliderOffsetLeft + 1}}
+          >
+            <BsChevronCompactRight size={60}/>
+          </div>
+        </div>
         <Slider {...sliderSettings} className="home-slider__container" ref={sliderRef}>
           {movies && Object.entries(movies).map((movie: any, index: number) => {
             return (
               <div className="home-slider__slide" key={index} style={{width: slider.sliderWidth}} >
-                {index != 0 && index % 4 == 0 && 
-                  <div className="home-slider__buttons" >
-                    <div className="home-slider__button" onClick={gotoNext}>
-                      <BsChevronCompactRight size={60}/>
-                    </div>
-                    <div className="home-slider__button" onClick={gotoPrev}>
-                      <BsChevronCompactLeft size={60}/>
-                    </div>
-                  </div>
-                }
+                <div className="home-slider__border"></div>
                 <img loading="lazy" src={movie[1].assets.previewImage} alt=""/>
               </div>
             )
