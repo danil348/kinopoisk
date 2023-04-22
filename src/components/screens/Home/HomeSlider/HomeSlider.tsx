@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { AiOutlineRight } from "react-icons/ai";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -6,26 +7,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import { useMovie } from "../../../../hooks/useMovie";
+import { sliderParameters, sliderSettings } from "../../../../types/slider.interface";
 interface HomeSliderProps {
 	category: string
-}
-
-const sliderSettings = {
-  dots: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  draggable: false,
-  variableWidth: true,
-  rows: 1
-};
-
-const sliderParameters = {
-  sliderWidth: 340,
-  sliderOffsetLeft: 170,
-  sliderMargin: 5,
-  slidesOnScreen: 5
 }
 
 const HomeSlider: React.FC<HomeSliderProps> = ({category}) => {
@@ -49,11 +33,11 @@ const HomeSlider: React.FC<HomeSliderProps> = ({category}) => {
 	}, [])
 
   useEffect(() => {
-    setSlider((prev) => ({...prev, sliderOffsetLeft: prev.sliderWidth / 2 - prev.sliderMargin * prev.slidesOnScreen}))
+    setSlider((prev) => ({...prev, sliderOffsetLeft: prev.sliderWidth / 3 - prev.sliderMargin * prev.slidesOnScreen}))
   }, [slider.sliderWidth])
 
   const changeSliderSize = () => {
-    setSlider((prev) => ({...prev, sliderWidth: window.innerWidth > 1040 ? window.innerWidth / slider.slidesOnScreen : 208}))
+    setSlider((prev) => ({...prev, sliderWidth: window.innerWidth > 1040 ? window.innerWidth / slider.slidesOnScreen + prev.sliderWidth / 3 / slider.slidesOnScreen : 208}))
   }
 
   const gotoNext = () => sliderRef.current?.slickNext();
@@ -61,6 +45,13 @@ const HomeSlider: React.FC<HomeSliderProps> = ({category}) => {
 
   return (
 		<div className="home-slider">
+      <div 
+        className="home-slider__titleWrapper title-wrapper"
+        onClick={() => navigate(`/movie/${category}`)}
+      >
+        <h2 className="title-wrapper__title" style={{paddingLeft: slider.sliderOffsetLeft}}>{category}</h2>
+        <AiOutlineRight size={20} className="title-wrapper__icon"/>
+      </div>
       <div className="home-slider__wrapper" style={{paddingLeft: slider.sliderOffsetLeft}}>
         <Slider {...sliderSettings} className="home-slider__container" ref={sliderRef}>
           {movies && Object.entries(movies).map((movie: any, index: number) => {

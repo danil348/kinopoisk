@@ -6,6 +6,34 @@
 	padding: 20px 0px;
 	width: auto;
 	position: relative;
+	@media (any-hover: hover) {
+		&:hover {
+			.title-wrapper__icon {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	.title-wrapper {
+		display: flex;
+		align-items: center;
+		margin-bottom: 15px;
+		gap: 5px;
+		cursor: pointer;
+		&__title {
+			text-transform: capitalize;
+			font-size: 25px;
+			font-weight: 500;
+		}
+
+		&__icon {
+			transition: all 0.3s ease 0s;
+			opacity: 0;
+			visibility: hidden;
+			transform: translate(0, 2px);
+		}
+	}
 	.slider-allMovieSlide {
 		will-change: transform;
 		transition: all 0.3s ease 0s;
@@ -78,9 +106,14 @@
 	}
 
 	&__button {
+		&:nth-child(1) {
+			justify-content: flex-start;
+		}
+		&:nth-child(2) {
+			justify-content: flex-end;
+		}
 		flex: 0 1 50%;
 		display: flex;
-		justify-content: center;
 		align-items: center;
 	}
 
